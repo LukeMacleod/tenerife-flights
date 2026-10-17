@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tenerife Flights</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="The best-value flights to Tenerife for Mum and Dad, checked several times a day.">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#2a78d6">
+<link rel="apple-touch-icon" href="icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Tenerife">
+<style>
+:root{color-scheme:light;--bg:#f7f7f5;--panel:#ffffff;--line:#e2e2dd;--grid:#eeeeea;--ink:#111110;--ink2:#4a4945;--ink3:#6f6e68;--acc:#2a78d6;--accink:#1d5fae;--accsoft:#e8f0fb;--good:#0a7d0a;--goodsoft:#e6f4e6;--warn:#9a6500;--warnsoft:#fbf1dc;--bad:#c02f2f;--badsoft:#fbe9e9;--hover:#f1f1ee;--track:#ececE8;
+ --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#141413;--panel:#1c1c1b;--line:#33332f;--grid:#262624;--ink:#f2f2ef;--ink2:#c9c8be;--ink3:#9a998f;--acc:#3987e5;--accink:#8fbaf0;--accsoft:#1a3559;--good:#5ccf5c;--goodsoft:#16301a;--warn:#e8b04a;--warnsoft:#33280f;--bad:#f07070;--badsoft:#3a1a1a;--hover:#242422;--track:#2a2a28;--s1:#3987e5;--s2:#e0683a;--s3:#1a9e6e}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#141413;--panel:#1c1c1b;--line:#33332f;--grid:#262624;--ink:#f2f2ef;--ink2:#c9c8be;--ink3:#9a998f;--acc:#3987e5;--accink:#8fbaf0;--accsoft:#1a3559;--good:#5ccf5c;--goodsoft:#16301a;--warn:#e8b04a;--warnsoft:#33280f;--bad:#f07070;--badsoft:#3a1a1a;--hover:#242422;--track:#2a2a28;--s1:#3987e5;--s2:#e0683a;--s3:#1a9e6e}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,"Helvetica Neue",Arial,sans-serif;font-feature-settings:"tnum"}
+.hdr{background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;padding-top:env(safe-area-inset-top)}
+.hdrin{max-width:880px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:16px;min-height:56px;flex-wrap:wrap}
+.title{font-weight:700;font-size:19px;letter-spacing:-.01em}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 12px;width:calc(100% + 32px)}.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;border:0;background:none;color:var(--ink2);font:inherit;font-size:16px;font-weight:600;padding:10px 12px;cursor:pointer;border-bottom:3px solid transparent;min-height:48px}
+.tabs button.on{color:var(--ink);border-bottom-color:var(--acc)}
+main{max-width:880px;margin:0 auto;padding:16px 16px 72px}.view{display:none}.view.on{display:block}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px;min-width:0}
+h2{font-size:15px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);margin:0 0 8px}
+h3{font-size:20px;margin:0 0 6px}
+.fresh{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;margin-bottom:14px;font-size:16px}
+.fresh.ok{background:var(--goodsoft);color:var(--ink)}.fresh.old{background:var(--badsoft);color:var(--ink);font-weight:600}
+.fresh .dot{width:12px;height:12px;border-radius:50%;margin-top:6px;flex:none}.fresh.ok .dot{background:var(--good)}.fresh.old .dot{background:var(--bad)}
+.airline{font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.sub{color:var(--ink2);font-size:17px}
+.legs{display:grid;gap:10px;margin:16px 0}
+.leg{display:grid;grid-template-columns:64px 1fr;gap:4px 12px;align-items:baseline;padding:12px;border-radius:10px;background:var(--hover)}
+.leg .k{font-weight:700;color:var(--ink3);font-size:15px;text-transform:uppercase;letter-spacing:.04em}
+.leg .d{font-weight:700;font-size:19px}.leg .t{grid-column:2;font-size:18px}.leg .w{grid-column:2;color:var(--warn);font-size:15px;font-weight:600}
+.total{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:6px 0 4px}
+.total .big{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1}.total .each{font-size:18px;color:var(--ink2)}
+.small{font-size:15px;color:var(--ink2)}.muted{color:var(--ink3);font-size:14px}
+.trend{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:17px;margin-top:8px}
+.trend.up{color:var(--bad)}.trend.down{color:var(--good)}.trend.flat{color:var(--ink2)}
+.verdict{border-radius:12px;padding:14px 16px;margin:14px 0;border-left:6px solid}
+.verdict.book_now{background:var(--accsoft);border-color:var(--acc)}.verdict.book_soon{background:var(--accsoft);border-color:var(--acc)}
+.verdict.wait{background:var(--warnsoft);border-color:var(--warn)}.verdict.no_data{background:var(--hover);border-color:var(--ink3)}
+.verdict b{display:block;font-size:22px;line-height:1.25;margin-bottom:4px}.verdict p{margin:0 0 6px;font-size:17px}
+.btns{display:grid;gap:10px;margin-top:14px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:19px;padding:15px 16px;border-radius:12px;background:var(--acc);color:#fff;min-height:52px}
+.btn.alt{background:var(--panel);color:var(--accink);border:2px solid var(--acc)}
+details{border-top:1px solid var(--line);margin-top:14px;padding-top:10px}summary{cursor:pointer;font-weight:600;color:var(--accink);padding:6px 0;min-height:44px;display:flex;align-items:center}
+.line{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:10px 0;border-top:1px solid var(--line);font-size:16px}.line:first-of-type{border-top:0}
+.line .n{grid-column:1/-1;color:var(--ink3);font-size:13px}
+.tag{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px;letter-spacing:.02em}
+.tag.live{background:var(--goodsoft);color:var(--good)}.tag.estimate{background:var(--warnsoft);color:var(--warn)}.tag.entered{background:var(--accsoft);color:var(--accink)}.tag.included,.tag.unknown{background:var(--hover);color:var(--ink2)}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.seg button{border:2px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:16px;font-weight:600;padding:10px 14px;border-radius:10px;cursor:pointer;min-height:48px}
+.seg button.on{border-color:var(--acc);background:var(--accsoft)}
+.mini{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 0;border-top:1px solid var(--line);cursor:pointer}.mini:first-of-type{border-top:0}
+.mini .a{font-weight:700}.mini .p{font-weight:800;font-size:20px;text-align:right}.mini .s{grid-column:1/-1;color:var(--ink2);font-size:15px}
+.list li{margin:6px 0}ul.list{padding-left:22px;margin:6px 0}
+.check li{list-style:none;position:relative;padding-left:30px;margin:10px 0}.check{padding:0;margin:6px 0}.check li::before{content:"☐";position:absolute;left:0;font-size:20px;line-height:1.2}
+.slider{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:15px;color:var(--ink2);margin:8px 0 4px}
+input[type=range]{width:100%;accent-color:var(--acc);height:32px}
+select{font:inherit;font-size:16px;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:48px}
+.chart{position:relative}.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.axis text{fill:var(--ink3);font-size:12px}.gridl{stroke:var(--grid)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--ink2);margin:6px 0 10px}.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);padding:8px 10px;border-radius:8px;font-size:13px;display:none;z-index:5;white-space:nowrap;line-height:1.4}
+table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}th{color:var(--ink3);font-size:13px;font-weight:600}td.r,th.r{text-align:right}
+.tblwrap{overflow-x:auto}
+.faq h3{font-size:18px;margin:16px 0 4px}.faq p{margin:0 0 8px;font-size:16px}
+a{color:var(--accink)}
+.foot{color:var(--ink3);font-size:13px;margin-top:20px}
+.theme{margin-left:auto;border:1px solid var(--line);background:var(--panel);color:var(--ink2);border-radius:10px;font:inherit;font-size:14px;padding:6px 10px;min-height:40px;cursor:pointer}
+</style></head><body>
+<div class="hdr"><div class="hdrin"><div class="title">✈️ Tenerife flights</div><button class="theme" id="theme" aria-label="Switch light or dark">◐</button>
+ <nav class="tabs" role="tablist">
+  <button data-t="home" class="on">Best deal</button><button data-t="all">All options</button><button data-t="hist">Price history</button><button data-t="save">Money savers</button><button data-t="points">Points</button>
+ </nav></div></div>
+<main>
+ <section class="view on" id="home">
+  <div id="fresh"></div>
+  <div class="card" id="bestcard"></div>
+  <div class="card"><h2>Getting to Edinburgh</h2><p class="small" style="margin:0">How will you get to Edinburgh? The totals change to match.</p><div class="seg" id="feeders"></div><p class="small" id="feederinfo"></p></div>
+  <div class="card"><h2>Other good choices</h2><div id="others"></div></div>
+  <div class="card"><h2>Cheapest for each day home</h2><div id="perdate"></div></div>
+  <div class="card"><h2>Cheapest from each airport</h2><div id="perairport"></div></div>
+  <div class="card"><h2>Before you book</h2><ul class="check" id="checklist"></ul></div>
+ </section>
+ <section class="view" id="all">
+  <div class="card"><h2>Every option</h2>
+   <div class="slider"><span>Cheapest</span><input type="range" id="w" min="0" max="100" value="70" aria-label="Cheapest or most comfortable"><span>Comfiest</span></div>
+   <p class="muted" style="margin:0 0 8px">Slide right to put comfort first (no very early starts or after-midnight landings).</p>
+   <select id="rdate" aria-label="Day home"></select>
+   <div id="alllist" style="margin-top:8px"></div></div>
+ </section>
+ <section class="view" id="hist">
+  <div class="card"><h2>Price history</h2><p class="small" id="histcap"></p><div class="legend" id="hleg"></div><div class="chart" id="hchart"><div class="tip" id="tip"></div></div>
+   <details><summary>Show as a table</summary><div class="tblwrap" id="htable"></div></details></div>
+  <div class="card"><h2>Is it a good time to book?</h2><div id="histverdict"></div><p class="muted">This is a rule of thumb from the prices we've seen, not a prediction. Seats-left counts aren't available from Google Flights, so they can't be shown.</p></div>
+ </section>
+ <section class="view" id="save"><div class="card faq" id="savings"></div></section>
+ <section class="view" id="points"><div class="card faq" id="pointsbox"></div></section>
+ <p class="foot" id="foot"></p>
+</main>
+<script id="data" type="application/json">{"summary":{"generated_at":"2026-10-17T22:24:45+00:00","days_to_go":60,"combos":[],"queries":[{"query":"2026-12-16|EDI-TFS","last_ok":"2026-10-17T22:22:53+00:00","age_hours":0.0,"source":"google_flights","flights":5},{"query":"2026-12-16|GLA-TFS","last_ok":"2026-10-17T22:22:58+00:00","age_hours":0.0,"source":"google_flights","flights":6},{"query":"2026-12-16|PIK-TFS","last_ok":"2026-10-17T22:23:15+00:00","age_hours":0.0,"source":null,"flights":0},{"query":"2027-01-06|TFS-EDI","last_ok":"2026-10-17T22:23:22+00:00","age_hours":0.0,"source":"google_flights","flights":3},{"query":"2027-01-06|TFS-GLA","last_ok":"2026-10-17T22:23:31+00:00","age_hours":0.0,"source":"google_flights","flights":4},{"query":"2027-01-06|TFS-PIK","last_ok":"2026-10-17T22:23:52+00:00","age_hours":0.0,"source":null,"flights":0},{"query":"2027-01-07|TFS-EDI","last_ok":"2026-10-17T22:24:01+00:00","age_hours":0.0,"source":"google_flights","flights":3},{"query":"2027-01-07|TFS-GLA","last_ok":"2026-10-17T22:24:06+00:00","age_hours":0.0,"source":"google_flights","flights":3},{"query":"2027-01-07|TFS-PIK","last_ok":"2026-10-17T22:24:12+00:00","age_hours":0.0,"source":"google_flights","flights":1},{"query":"2027-01-09|TFS-EDI","last_ok":"2026-10-17T22:24:21+00:00","age_hours":0.0,"source":"google_flights","flights":5},{"query":"2027-01-09|TFS-GLA","last_ok":"2026-10-17T22:24:28+00:00","age_hours":0.0,"source":"google_flights","flights":4},{"query":"2027-01-09|TFS-PIK","last_ok":"2026-10-17T22:24:37+00:00","age_hours":0.0,"source":"google_flights","flights":1}]},"config":{"travellers":2,"outbound_date":"2026-12-16","return_dates":["2027-01-06","2027-01-07","2027-01-09"],"origins":["EDI","GLA","PIK"],"origins_not_watched":{"ABZ":"No direct Tenerife South flight on these dates (checked 16 Oct 2026); one-stop options cost over \u00a3250 each.","INV":"No direct Tenerife South flight on these dates (checked 16 Oct 2026).","TFN":"Tenerife North has no direct flight from Scotland, and the apartment is in the south, near TFS."},"home_airport":"EDI","bags":{"hold_bags":2,"hold_kg":23,"large_cabin_bags":2},"feeders":{"car_ferry":{"label":"Car + ferry","low":203,"high":264,"status":"estimate","detail":"Ferry for the car (\u00a3138.10 return) and you (\u00a351, or free with your ferry vouchers), plus about \u00a364\u201375 of petrol for the 424 miles.","days_out":[1,2,3,4,5,6,7],"days_home":[1,2,3,4,5,6,7],"hours_each_way":8,"comfort_penalty":1.5},"loganair_ads":{"label":"Loganair with Air Discount","low":336,"high":446,"status":"estimate","detail":"Loganair with 50% off the core fare (about \u00a3296\u2013346 for two), plus FlyFlex for 23 kg bags (+\u00a320\u201325 per person per flight; whether the discount applies to it is not confirmed).","days_out":[1,3],"days_home":[3,4,7],"fixed_out_date":"2026-12-14","hours_each_way":3.5,"comfort_penalty":0},"loganair_full":{"label":"Loganair (no discount)","low":652,"high":672,"status":"estimate","detail":"Loganair Fly fare \u00a3285.98 each return, plus FlyFlex for 23 kg bags.","days_out":[1,3],"days_home":[3,4,7],"fixed_out_date":"2026-12-14","hours_each_way":3.5,"comfort_penalty":0},"foot_coach":{"label":"Ferry on foot + coach","low":0,"high":55,"status":"estimate","detail":"Free coaches with your bus passes; ferry free with your ferry vouchers (or \u00a351). One 20 kg case each on the coach.","days_out":[1,2,3,4,5,6,7],"days_home":[1,2,3,4,5,6,7],"hours_each_way":9,"comfort_penalty":3}},"default_feeder":"car_ferry","stale_hours":12,"target_total":200},"savings":"\n<h2>Money savers we found<\/h2>\n<p class=\"small\">Checked 16 October 2026. Full sources are in RESEARCH.md.<\/p>\n<h3>Bags are the hidden cost<\/h3>\n<p>Airlines change bag prices with demand and don't publish them for a date, so the bag figures here are estimates.\neasyJet's large cabin bag is extra (about \u00a323\u201345 each way); Jet2 and TUI include a 10 kg cabin bag.\nJet2's biggest hold bag is 22 kg and Ryanair's is 20 kg, so pack to that or pay \u00a312\u201313 per extra kilo.<\/p>\n<h3>Ryanair airport check-in costs \u00a355 each<\/h3>\n<p>If you fly Ryanair, check in online (your son can do it) and keep the boarding pass on the phone.<\/p>\n<h3>Cashback<\/h3>\n<p>Jet2 flights: \u00a35 per booking through TopCashback or Quidco. TUI flights: about 1.5%. easyJet, Ryanair and Loganair: nothing.<\/p>\n<h3>Amex Offers<\/h3>\n<p>No current offers found for these airlines, but offers differ by card, so check the Amex app before booking.<\/p>\n<h3>Credit-card protection<\/h3>\n<p>Paying by credit card for something over \u00a3100 gives Section 75 protection. Book both of you on one booking so the total is over \u00a3100.<\/p>\n<h3>Sales<\/h3>\n<p>No Black Friday flight sale has been announced. Last year most sales left out Christmas, so waiting for one is a gamble. The watcher keeps checking and will message you if prices drop.<\/p>\n<h3>Getting to Edinburgh<\/h3>\n<p>Your Air Discount Scheme gives 50% off Loganair's core fare. The basic Fly fare includes only 15 kg, so pick FlyFlex for 23 kg bags.\nWith your 60+ bus passes, Citylink coaches and the Airlink 100 to Edinburgh Airport are free in the daytime (not the tram).\nWith your 60+ cards you get two free return ferry trips a year (passengers only, not the car).<\/p>\n<h3>Free and important<\/h3>\n<p>GHIC health card: free, only from nhs.uk. Special assistance at the airport: free, book through the airline at least 48 hours ahead.\nTravel insurance: the MoneyHelper directory lists insurers for older travellers; declare every condition.<\/p>\n<h3>Competitions<\/h3>\n<p>Nothing worth entering right now. \"Free flights\" pages on Facebook are a common scam.<\/p>\n","points":"\n<h2>Points and Air Miles<\/h2>\n<p>You don't have points yet, and for this trip they aren't worth chasing.<\/p>\n<h3>Why<\/h3>\n<p>British Airways reward flights to Tenerife leave from London (15,000 Avios + \u00a32.50 one way off-peak), so you'd still need to get to London.\nAgainst normal fares that's worth only about 0.4\u20130.8p per Avios, which is poor. The good sign-up bonus has closed, and new points wouldn't arrive in time for Christmas.<\/p>\n<h3>Worth doing anyway<\/h3>\n<p>Sign up free to myJet2 for member-only offers. Keep using the Amex for the booking (protection, and points for next time).<\/p>\n"}</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent),S=D.summary,CFG=D.config;
+const $=id=>document.getElementById(id);
+const gbp=v=>'£'+Math.round(v).toLocaleString('en-GB');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const AIRPORT={EDI:'Edinburgh',GLA:'Glasgow',PIK:'Prestwick',TFS:'Tenerife South',ABZ:'Aberdeen',INV:'Inverness'};
+const ap=c=>AIRPORT[c]||c;
+const dlab=iso=>{const d=new Date(iso+'T12:00:00');return d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})};
+const TAG={live:'Confirmed price',estimate:'Estimate',entered:'Your figure',included:'Included',unknown:'Not known'};
+// ---- theme toggle (per-viewer convenience)
+try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+$('theme').onclick=()=>{const cur=document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');const n=cur==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}};
+// ---- tabs
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id===b.dataset.t));if(b.dataset.t==='hist')drawHist();scrollTo(0,0)});
+// ---- feeder choice
+const FEEDERS=Object.entries(CFG.feeders).filter(([k])=>!k.startsWith('_'));
+let feeder=CFG.default_feeder;try{const f=localStorage.getItem('feeder');if(f&&CFG.feeders[f])feeder=f}catch(e){}
+let weight=0.7;
+function totals(c){const f=CFG.feeders[feeder];const fm=(f.low+f.high)/2;const mid=c.base.mid+fm;const low=c.base.low+f.low,high=c.base.high+f.high;const comfort=Math.max(0,Math.round((c.comfort-(f.comfort_penalty||0))*10)/10);return{mid,low,high,comfort,feederMid:fm}}
+function ranked(list){if(!list.length)return[];const ts=list.map(c=>[c,totals(c)]);const cheapest=Math.min(...ts.map(x=>x[1].mid));return ts.sort((a,b)=>score(b)-score(a)).map(x=>x[0]);function score([c,t]){return weight*(cheapest/t.mid)+(1-weight)*t.comfort/10}}
+function stale(){const ages=S.queries.map(q=>q.age_hours).filter(a=>a!=null);const gen=(Date.now()-Date.parse(S.generated_at))/36e5;const age=(ages.length?Math.max(...ages):999)+Math.max(0,gen);return age}
+function agoText(h){if(h<1)return'less than an hour ago';if(h<1.5)return'1 hour ago';if(h<36)return Math.round(h)+' hours ago';return Math.round(h/24)+' days ago'}
+function trendHTML(v){if(!v||v.change_3d==null){return'<span class="trend flat">● Not enough history yet for a trend</span>'}const c=v.change_3d;if(Math.abs(c)<5)return`<span class="trend flat">→ Steady over the last 3 days</span>`;return c>0?`<span class="trend up">▲ Up ${gbp(c)} in 3 days</span>`:`<span class="trend down">▼ Down ${gbp(-c)} in 3 days</span>`}
+function legHTML(k,l,home){const late=l.arr_date>l.date;let warn='';if(l.dep<'07:00')warn=`Very early: leave ${home?'the apartment':'the house'} around ${early(l.dep)}`;else if(late)warn='Lands after midnight';else if(l.arr>='22:00')warn='Lands late in the evening';
+ return`<div class="leg"><span class="k">${k}</span><span class="d">${dlab(l.date)}</span><span class="t">${esc(l.dep)} ${ap(l.origin)} → ${esc(l.arr)} ${ap(l.dest)}${late?' (next day)':''}</span>${warn?`<span class="w">⚠ ${warn}</span>`:''}</div>`}
+function early(t){const[h,m]=t.split(':').map(Number);const y=((h*60+m-150)%1440+1440)%1440;return String(Math.floor(y/60)).padStart(2,'0')+':'+String(y%60).padStart(2,'0')}
+function airlineName(c){return c.out.airline===c.back.airline?c.out.airline:`${c.out.airline} out, ${c.back.airline} home`}
+function airportName(c){return c.out.origin===c.back.dest?'From '+ap(c.out.origin):`Out from ${ap(c.out.origin)}, home to ${ap(c.back.dest)}`}
+function linesHTML(c){const f=CFG.feeders[feeder];const lines=[...c.base.lines,{label:'Getting to Edinburgh and back: '+f.label,low:f.low,high:f.high,status:f.status,note:f.detail}];
+ return lines.map(l=>{const v=l.low===l.high?gbp(l.low):`${gbp(l.low)}–${gbp(l.high)}`;return`<div class="line"><span>${esc(l.label)}<span class="tag ${l.status}">${TAG[l.status]||l.status}</span></span><b>${l.low<0?'−'+gbp(-l.low):v}</b>${l.note?`<span class="n">${esc(l.note)}</span>`:''}</div>`}).join('')}
+function planText(c){const p=c.plans[feeder];if(!p)return'';const f=CFG.feeders[feeder];return`${f.label}: travel to Edinburgh on ${dlab(p.go)}, home ${p.home?'on '+dlab(p.home):'(no service found that week)'}. That's ${p.nights_in_edinburgh} nights in Edinburgh in total.`}
+function renderHome(){
+ const age=stale();$('fresh').innerHTML=age>CFG.stale_hours?`<div class="fresh old"><span class="dot"></span><span>These prices were last checked ${agoText(age)}. They may have changed, so check before booking.</span></div>`:`<div class="fresh ok"><span class="dot"></span><span>Prices checked ${agoText(age)}. Checked again ${S.days_to_go>45?'3':'4'} times a day.</span></div>`;
+ const R=ranked(S.combos);const c=R[0];
+ if(!c){$('bestcard').innerHTML='<h2>Best deal right now</h2><p>No prices yet. The first check will run soon.</p>';return}
+ const t=totals(c),v=c.verdict;const each=t.mid/CFG.travellers;
+ $('bestcard').innerHTML=`<h2>Best deal right now</h2><div class="airline">${esc(airlineName(c))}</div><div class="sub">${esc(airportName(c))} · direct flights</div>
+ <div class="legs">${legHTML('Out',c.out,false)}${legHTML('Home',c.back,true)}</div>
+ <div class="small">Total for both of you, with bags:</div>
+ <div class="total"><span class="big">about ${gbp(t.mid)}</span><span class="each">about ${gbp(each)} each</span></div>
+ <div class="small">${gbp(c.flights_total)} of this is the confirmed fare. Bags and travel to Edinburgh are estimates (${gbp(t.low)}–${gbp(t.high)} in total).</div>
+ ${trendHTML(v)}
+ <div class="verdict ${v.action}"><b>${esc(v.headline)}</b><p>${esc(v.detail)}</p><span class="muted">How sure: ${esc(v.confidence)}. A rule of thumb, not a prediction.${v.lowest!=null?' Lowest seen: '+gbp(v.lowest)+' (fares only).':''}</span></div>
+ <div class="btns">${bookBtns(c)}</div>
+ <details><summary>What's in the price</summary>${linesHTML(c)}</details>
+ ${c.reasons.length?`<details><summary>Comfort: ${t.comfort} out of 10</summary><ul class="list">${c.reasons.map(r=>`<li>${esc(r)}</li>`).join('')}</ul></details>`:`<p class="small">Comfort: ${t.comfort} out of 10</p>`}`;
+ $('others').innerHTML=R.slice(1,3).map(c=>mini(c)).join('')||'<p class="small">No other options right now.</p>';
+ const pd={};S.combos.slice().sort((a,b)=>totals(a).mid-totals(b).mid).forEach(x=>{pd[x.return_date]=pd[x.return_date]||x});
+ $('perdate').innerHTML=CFG.return_dates.map(d=>pd[d]?mini(pd[d],'Home '+dlab(d)):`<div class="mini"><span class="a">Home ${dlab(d)}</span><span class="s">No direct flights showing right now. They may be sold out or the timetable may have changed. We keep checking and will message you.</span></div>`).join('');
+ const pa={};S.combos.slice().sort((a,b)=>totals(a).mid-totals(b).mid).forEach(x=>{if(x.out.origin===x.back.dest)pa[x.out.origin]=pa[x.out.origin]||x});
+ $('perairport').innerHTML=CFG.origins.map(o=>pa[o]?mini(pa[o],ap(o)+' both ways'):`<div class="mini"><span class="a">${ap(o)}</span><span class="s">No same-airport return found${o==='PIK'?' (Ryanair doesn\'t fly from Prestwick on Wednesdays)':''}</span></div>`).join('')+Object.entries(CFG.origins_not_watched).map(([k,why])=>`<div class="mini"><span class="a">${ap(k)}</span><span class="s">${esc(why)}</span></div>`).join('');
+ $('feederinfo').textContent=planText(c)+' '+CFG.feeders[feeder].detail;
+ $('checklist').innerHTML=checklist(c).map(x=>`<li>${x}</li>`).join('');
+ document.querySelectorAll('.mini[data-k]').forEach(el=>el.onclick=()=>openCombo(el.dataset.k));
+}
+function bookBtns(c){const a=`<a class="btn" href="${esc(c.out.book_url)}" target="_blank" rel="noopener">Book on ${esc(c.out.airline)}</a>`;const b=c.back.airline!==c.out.airline?`<a class="btn" href="${esc(c.back.book_url)}" target="_blank" rel="noopener">Book home flight on ${esc(c.back.airline)}</a>`:'';const g=c.out.extra&&c.out.extra.google_url?`<a class="btn alt" href="${esc(c.out.extra.google_url)}" target="_blank" rel="noopener">See it on Google Flights</a>`:'';return a+b+g}
+function mini(c,lab){const t=totals(c);return`<div class="mini" data-k="${esc(c.key)}"><span class="a">${esc(lab||airlineName(c))}</span><span class="p">${gbp(t.mid)}</span><span class="s">${esc(lab?airlineName(c)+' · ':'')}${esc(airportName(c))}. Out ${c.out.dep}, home ${dlab(c.back.date).split(' ').slice(0,3).join(' ')} ${c.back.dep}→${c.back.arr}. Comfort ${t.comfort}/10</span></div>`}
+function openCombo(k){const i=S.combos.findIndex(c=>c.key===k);if(i<0)return;const c=S.combos[i];const t=totals(c);const box=$('bestcard');
+ box.innerHTML=`<h2>Option you picked <button class="theme" style="float:right" onclick="renderHome()">Back to best</button></h2><div class="airline">${esc(airlineName(c))}</div><div class="sub">${esc(airportName(c))}</div><div class="legs">${legHTML('Out',c.out,false)}${legHTML('Home',c.back,true)}</div><div class="total"><span class="big">about ${gbp(t.mid)}</span><span class="each">about ${gbp(t.mid/CFG.travellers)} each</span></div>${trendHTML(c.verdict)}<div class="verdict ${c.verdict.action}"><b>${esc(c.verdict.headline)}</b><p>${esc(c.verdict.detail)}</p></div><div class="btns">${bookBtns(c)}</div><details open><summary>What's in the price</summary>${linesHTML(c)}</details>${c.reasons.length?`<details><summary>Comfort: ${t.comfort} out of 10</summary><ul class="list">${c.reasons.map(r=>`<li>${esc(r)}</li>`).join('')}</ul></details>`:''}`;
+ document.querySelectorAll('.tabs button')[0].click();box.scrollIntoView({behavior:'smooth'})}
+function checklist(c){const L=[];const codes=new Set([c.out.airline_code,c.back.airline_code]);
+ L.push(`Book <b>both of you on one booking</b> on the Amex. Credit-card protection (Section 75) only applies to items over £100.`);
+ L.push(`Add <b>${CFG.bags.hold_bags} hold bags</b> while booking (it costs more later or at the airport).`);
+ [c.out,c.back].forEach(l=>(l.notes||[]).forEach(n=>{if(!L.includes(n))L.push(esc(n))}));
+ L.push('Ask for <b>free special assistance</b> (wheelchair or help at the airport) through the airline at least 48 hours before you fly, if you want it.');
+ L.push('Get your free <b>GHIC</b> health cards from <a href="https://www.nhs.uk/using-the-nhs/healthcare-abroad/apply-for-a-free-uk-global-health-insurance-card-ghic/" target="_blank" rel="noopener">nhs.uk</a> only. Other sites charge for it.');
+ L.push('Buy travel insurance that covers your medical conditions (<a href="https://www.moneyhelper.org.uk/en/everyday-money/insurance/travel-insurance-directory" target="_blank" rel="noopener">MoneyHelper directory</a>).');
+ if(feeder.startsWith('loganair'))L.push('Book Loganair with each of your Air Discount Scheme numbers, and pick <b>FlyFlex</b> for 23 kg bags.');
+ if(feeder==='car_ferry'||feeder==='foot_coach')L.push('Ask the ferry company to use your free ferry vouchers (book by phone or at the port office).');
+ return [...new Set(L)]}
+function renderFeeders(){$('feeders').innerHTML=FEEDERS.map(([k,f])=>`<button data-f="${k}" class="${k===feeder?'on':''}">${esc(f.label)}<br><span class="muted">${gbp(f.low)}${f.high!==f.low?'–'+gbp(f.high):''} · ${f.hours_each_way} h</span></button>`).join('');
+ document.querySelectorAll('#feeders button').forEach(b=>b.onclick=()=>{feeder=b.dataset.f;try{localStorage.setItem('feeder',feeder)}catch(e){}renderFeeders();renderHome();renderAll()})}
+// ---- all options
+function renderAll(){const sel=$('rdate').value;const L=ranked(S.combos.filter(c=>!sel||c.return_date===sel));
+ $('alllist').innerHTML=L.length?L.map((c,i)=>{const t=totals(c);return`<div class="mini" data-k="${esc(c.key)}"><span class="a">${i+1}. ${esc(airlineName(c))}</span><span class="p">${gbp(t.mid)}</span><span class="s">${esc(airportName(c))}. Out ${c.out.dep}→${c.out.arr}; home ${dlab(c.back.date)} ${c.back.dep}→${c.back.arr}${c.back.arr_date>c.back.date?' (next day)':''}. Comfort ${t.comfort}/10. Fares ${gbp(c.flights_total)} confirmed.</span></div>`}).join(''):'<p>No options yet.</p>';
+ document.querySelectorAll('#alllist .mini').forEach(el=>el.onclick=()=>openCombo(el.dataset.k))}
+$('rdate').innerHTML='<option value="">Any day home</option>'+CFG.return_dates.map(d=>`<option value="${d}">Home ${dlab(d)}</option>`).join('');
+$('rdate').onchange=renderAll;$('w').oninput=e=>{weight=1-e.target.value/100;renderAll();renderHome()};
+// ---- history chart (≤3 series + direct labels + table view)
+function drawHist(){const R=ranked(S.combos).slice(0,3);const box=$('hchart');const tip=$('tip');
+ const series=R.map((c,i)=>({name:`${i+1}. ${airlineName(c)}, home ${dlab(c.back.date).split(' ').slice(0,2).join(' ')}`,color:`var(--s${i+1})`,pts:c.history.map(([ts,p])=>[Date.parse(ts),p])}));
+ const all=series.flatMap(s=>s.pts);
+ $('histcap').textContent=all.length?`Fares for both of you (before bags) for the top 3 options, every time we checked. History started ${new Date(Math.min(...all.map(p=>p[0]))).toLocaleDateString('en-GB',{day:'numeric',month:'long'})}.`:'No history yet.';
+ $('hleg').innerHTML=series.map(s=>`<span><i style="background:${s.color}"></i>${esc(s.name)}</span>`).join('');
+ box.querySelectorAll('svg').forEach(x=>x.remove());if(!all.length)return;
+ const W=Math.max(320,box.clientWidth),H=260,m={l:52,r:16,t:12,b:28};
+ let x0=Math.min(...all.map(p=>p[0])),x1=Math.max(...all.map(p=>p[0]));if(x1-x0<36e5*6){x0-=36e5*12;x1+=36e5*12}
+ let y0=Math.min(...all.map(p=>p[1])),y1=Math.max(...all.map(p=>p[1]));const pad=Math.max(20,(y1-y0)*.15);y0=Math.max(0,y0-pad);y1+=pad;
+ const X=t=>m.l+(t-x0)/(x1-x0)*(W-m.l-m.r),Y=v=>H-m.b-(v-y0)/(y1-y0)*(H-m.t-m.b);
+ const ticks=4;let g='';for(let i=0;i<=ticks;i++){const v=y0+(y1-y0)*i/ticks;g+=`<line class="gridl" x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${m.l-8}" y="${Y(v)+4}" text-anchor="end">${gbp(v)}</text>`}
+ for(let i=0;i<=3;i++){const t=x0+(x1-x0)*i/3;g+=`<text x="${X(t)}" y="${H-8}" text-anchor="${i===0?'start':i===3?'end':'middle'}">${new Date(t).toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</text>`}
+ const paths=series.map(s=>`<path d="${s.pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join('')}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round"/>`+s.pts.map(p=>`<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="4" fill="${s.color}" stroke="var(--panel)" stroke-width="2"/>`).join('')).join('');
+ const svg=`<svg viewBox="0 0 ${W} ${H}" class="axis" role="img" aria-label="Price history chart">${g}${paths}<line id="xh" y1="${m.t}" y2="${H-m.b}" stroke="var(--ink3)" stroke-dasharray="3 3" style="display:none"/><rect x="${m.l}" y="0" width="${W-m.l-m.r}" height="${H}" fill="transparent" id="hit"/></svg>`;
+ box.insertAdjacentHTML('afterbegin',svg);const hit=box.querySelector('#hit'),xh=box.querySelector('#xh');
+ const move=e=>{const r=box.querySelector('svg').getBoundingClientRect();const px=((e.touches?e.touches[0].clientX:e.clientX)-r.left)*W/r.width;const t=x0+(px-m.l)/(W-m.l-m.r)*(x1-x0);
+  const rows=series.map(s=>{let best=null;s.pts.forEach(p=>{if(!best||Math.abs(p[0]-t)<Math.abs(best[0]-t))best=p});return best?{s,p:best}:null}).filter(Boolean);if(!rows.length)return;
+  const tx=rows[0].p[0];xh.setAttribute('x1',X(tx));xh.setAttribute('x2',X(tx));xh.style.display='';
+  tip.innerHTML=`<b>${new Date(tx).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}</b><br>`+rows.map(r=>`<span style="color:${r.s.color}">■</span> ${gbp(r.p[1])} ${esc(r.s.name.split(',')[0])}`).join('<br>');
+  tip.style.display='block';const left=X(tx)/W*r.width;tip.style.left=Math.min(left+12,r.width-tip.offsetWidth-4)+'px';tip.style.top='8px'};
+ hit.addEventListener('mousemove',move);hit.addEventListener('touchstart',move,{passive:true});hit.addEventListener('touchmove',move,{passive:true});hit.addEventListener('mouseleave',()=>{tip.style.display='none';xh.style.display='none'});
+ const times=[...new Set(all.map(p=>p[0]))].sort((a,b)=>b-a);
+ $('htable').innerHTML=`<table><tr><th>Checked</th>${series.map(s=>`<th class="r">${esc(s.name.split(',')[0])}</th>`).join('')}</tr>${times.map(t=>`<tr><td>${new Date(t).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}</td>${series.map(s=>{const p=s.pts.find(p=>p[0]===t);return`<td class="r">${p?gbp(p[1]):'–'}</td>`}).join('')}</tr>`).join('')}</table>`;
+ const v=R[0].verdict;$('histverdict').innerHTML=`<div class="verdict ${v.action}"><b>${esc(v.headline)}</b><p>${esc(v.detail)}</p></div><p class="small">Lowest seen: ${v.lowest!=null?gbp(v.lowest):'–'} · 3 days: ${v.change_3d==null?'not enough history':(v.change_3d>0?'+':'−')+gbp(Math.abs(v.change_3d))} · 7 days: ${v.change_7d==null?'not enough history':(v.change_7d>0?'+':'−')+gbp(Math.abs(v.change_7d))}</p>`}
+addEventListener('resize',()=>{if($('hist').classList.contains('on'))drawHist()});
+// ---- static research content
+$('savings').innerHTML=D.savings;$('pointsbox').innerHTML=D.points;
+$('foot').innerHTML=`Fares from Google Flights for ${CFG.travellers} people, direct flights only. "Estimate" means a published price range, not this flight's real price; check it when booking. Page built ${new Date(S.generated_at).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}.`;
+renderFeeders();renderHome();renderAll();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script></body></html>
